@@ -1,8 +1,8 @@
 fun main() {
 
-    val moneyTransfer = 11100f
+    val moneyTransfer = 5000f
     val previousСash = 78000f
-    val typeCard = "Mastercard"
+    val typeCard = "Visa"
     val transfer: Float
     val comission = getMoneyComission(typeCard, previousСash, moneyTransfer)
 
@@ -25,7 +25,7 @@ fun getMoneyComission(typeCard: String = "Vk pay", previousСash: Float = 0f, mo
         }
 
         "Visa", "Мир" -> if (moneyTransfer <= 150000f && previousСash <= 600000f) {
-            if (previousСash + moneyTransfer <= 75000) 0f else moneyTransfer * 0.006f + 20
+            if (moneyTransfer * 0.0075 > 35) moneyTransfer * 0.0075f else 35f
         } else {
             -1f
         }
